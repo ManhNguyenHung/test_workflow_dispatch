@@ -1,15 +1,17 @@
 name: test_workflow_dispatch_test
 
+# on: 
+#   workflow_dispatch:
+#     inputs:
+#       envs:
+#         description: 'List envs are deployed'     
+#         required: true
 on: 
-  workflow_dispatch:
-    inputs:
-      envs:
-        description: 'List envs are deployed'     
-        required: true
-
+  push: 
+    branches: [test]
 jobs:
   printInputs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "Envs: ${{ github.event.inputs.envs }}" 
+        echo "Envs: test" 
