@@ -15,4 +15,4 @@ jobs:
         env: ${{ fromJSON(github.event.inputs.envs)}}
     steps:
     - run: |
-        echo "Envs: ${{ github.event.inputs.envs }}" 
+        echo "Envs: ${{ matrix.env }}" 
