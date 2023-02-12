@@ -1,0 +1,17 @@
+name: test_workflow_dispatch_dev
+
+# on: 
+#   workflow_dispatch:
+#     inputs:
+#       envs:
+#         description: 'List envs are deployed'     
+#         required: true
+on: 
+  push: 
+    branches: [test]
+jobs:
+  printInputs:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "Envs: dev" 
